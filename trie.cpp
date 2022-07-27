@@ -1,20 +1,10 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma,sse,sse2,sse3,sse4")
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long int ll;
-typedef long double ld;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pii;
-typedef pair<ll, ll> pll;
 typedef string str;
-const int MOD = 1e9 + 9;
-const int INF = 0x3f3f3f3f;
 uint trie[1000][26] = {};
 unordered_map<char, uint> mp;
 
-bool chkadd(string s){
+bool chkadd(str s){
 	if(!s.size()) return true;
 	bool chk = true;
 	uint prev = 1;
@@ -34,7 +24,7 @@ bool chkadd(string s){
 
 int main(){
 	int n;
-	string st;
+	str st;
 	cin >> n >> st;
 	for(int a = 0; a < (int)st.size(); a++) mp[st[a]] = a+1;
 	while(n--){
