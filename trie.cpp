@@ -8,7 +8,7 @@ bool chkadd(str s){
 	if(!s.size()) return true;
 	bool chk = true;
 	uint prev = 1;
-	for(int a = 0; a < (int)s.size(); a++){
+	for(int a = 0; a < (int)s.size(); prev = mp[s[a]], a++){
 		if(!mp.count(s[a])){
 			chk = false;
 			break;
@@ -17,7 +17,6 @@ bool chkadd(str s){
 			trie[a][mp[s[a]]] += 1 << (prev - 1);
 			chk = false;
 		}
-		prev = mp[s[a]];
 	}
 	return chk;
 }
